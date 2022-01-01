@@ -2,8 +2,9 @@ import React from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 
 type PageHeaderProps = {
-  title?: JSX.Element | string;
+  className?: string;
   actions?: JSX.Element;
+  title?: JSX.Element | string;
   children?: JSX.Element | JSX.Element[] | any;
 };
 
@@ -34,7 +35,7 @@ export const PageHeader = (props: PageHeaderProps) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.pageRoot}>
+    <div className={`${classes.pageRoot} ${props.className}`}>
       <div className="page-header-container">
         <div className="top">
           <div className="title">

@@ -6,8 +6,6 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Thing = ({ children }: Props) => {
-  console.log(children);
-
   return (
     <div>
       <BasePage title="sss">
@@ -16,6 +14,7 @@ export const Thing = ({ children }: Props) => {
         eaque eius inventore minus aliquid animi sint quasi praesentium nam.
         Quos, nam!
       </BasePage>
+      {children}
     </div>
   );
 };
