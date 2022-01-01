@@ -1,0 +1,30 @@
+{
+    "path": "/intranet/customer/:customerId/events/:eventId",
+    "header": {
+        "title": {
+            "en": "Update Event",
+            "es": "Actualizar Evento",
+            "ca": "Actualitzar Esdeveniment"
+        },
+        "actions": [
+            {
+                "title": {
+                    "en": "Assistances",
+                    "es": "Asistencias",
+                    "ca": "Asistencias"
+                },
+                "type": "redirect",
+                "path": "{CURRENT_PATH}/assistance/new"
+            },
+            {
+                "title": {
+                    "en": "Incidences",
+                    "es": "Incidencias",
+                    "ca": "Asistencias"
+                },
+                "type": "redirect",
+                "path": "{CURRENT_PATH}/incidences/new"
+            }
+        ]
+    }
+}

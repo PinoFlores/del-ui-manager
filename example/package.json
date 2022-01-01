@@ -14,7 +14,10 @@
   },
   "alias": {
     "react": "../node_modules/react",
-    "react-dom": "../node_modules/react-dom/profiling"
+    "react-dom": "../node_modules/react-dom/profiling",
+    "react-router-dom": "../node_modules/react-router-dom",
+    "i18next": "../node_modules/i18next",
+    "react-i18next": "../node_modules/react-i18next"
   },
   "devDependencies": {
     "@types/react": "^16.9.11",

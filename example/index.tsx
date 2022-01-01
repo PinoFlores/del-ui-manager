@@ -4,11 +4,17 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Thing } from '../.';
 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 const App = () => {
   return (
-    <div>
-      <Thing />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Thing />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
