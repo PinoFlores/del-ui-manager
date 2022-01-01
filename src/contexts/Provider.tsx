@@ -1,26 +1,15 @@
 import React, { ReactNode } from 'react';
-import { LanguangeContext } from './LangContext';
+import { LanguangeContext } from './LanguangeContext';
 
 interface LanguageProviderProps {
   children?: ReactNode | ReactNode[];
 }
 
 export const LanguageProvider = (props: LanguageProviderProps) => {
-  const [language, setLanguage] = React.useState('en');
-
-  const changeLanguage = (langOptions = 'en') => {
-    setLanguage(langOptions);
-  };
-
-  const values = React.useMemo(() => {
-    return {
-      language,
-      changeLanguage,
-    };
-  }, [language]);
+  const [language, setLanguage] = React.useState('es');
 
   return (
-    <LanguangeContext.Provider value={values}>
+    <LanguangeContext.Provider value={{ language, setLanguage }}>
       {props.children}
     </LanguangeContext.Provider>
   );

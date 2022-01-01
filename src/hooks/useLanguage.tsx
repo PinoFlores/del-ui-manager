@@ -1,10 +1,4 @@
 import React from 'react';
-import { LanguangeContext } from './../contexts/LangContext';
+import { LanguangeContext } from '../contexts/LanguangeContext';
 
-export const useLanguage = () => {
-  const context = React.useContext(LanguangeContext);
-  console.log(context);
-
-  if (!context) throw new Error('x');
-  return context;
-};
+export const useLanguage = () => React.useContext(LanguangeContext);

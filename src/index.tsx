@@ -1,41 +1,62 @@
 import React, { HTMLAttributes, ReactChild } from 'react';
 import { PageBuilder } from './components/page/PageBuilder';
+import { Wrapper } from './Wrapper';
 import Configs from './page.json';
 import { useLanguage } from './hooks/useLanguage';
-import { Wrapper } from './Wrapper';
+import { Button } from '@material-ui/core';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactChild;
 }
 
-export const Thing = () => {
-  const { changeLanguage, language } = useLanguage();
+const Main = () => {
+  const { setLanguage, language } = useLanguage();
 
   return (
-    <Wrapper>
+    <>
       {language}
-      <button
-        onClick={() => {
-          changeLanguage('es');
-        }}
-      >
-        espanol
-      </button>
-      <button
-        onClick={() => {
-          changeLanguage('en');
-        }}
-      >
-        en
-      </button>
-      <button
-        onClick={() => {
-          changeLanguage('ca');
-        }}
-      >
-        ca
-      </button>
-      <PageBuilder pageConfigs={Configs}></PageBuilder>
+      <>
+        <Button
+          disableElevation
+          style={{ marginRight: '1rem' }}
+          color="primary"
+          variant="contained"
+          onClick={() => {
+            console.log('aaaaaaaaaaaaa');
+            setLanguage('es');
+          }}
+        >
+          espanol
+        </Button>
+        <Button
+          style={{ marginRight: '1rem' }}
+          color="primary"
+          variant="contained"
+          onClick={() => {
+            setLanguage('en');
+          }}
+        >
+          en
+        </Button>
+        <Button
+          color="primary"
+          variant="contained"
+          onClick={() => {
+            setLanguage('ca');
+          }}
+        >
+          ca
+        </Button>
+        <PageBuilder pageConfigs={Configs} />
+      </>
+    </>
+  );
+};
+
+export const Thing = () => {
+  return (
+    <Wrapper>
+      <Main />
     </Wrapper>
   );
 };
